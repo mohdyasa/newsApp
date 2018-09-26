@@ -1,0 +1,13 @@
+.equal {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-end;
+}
+.img-fluid {
+	width: 600px;
+	height: 300px;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}

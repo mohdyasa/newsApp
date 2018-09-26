@@ -1,0 +1,50 @@
+<div class="pb-2 mt-4 mb-2 border-bottom">
+  <h2 style="text-align: center" class="page-header" >Top Trending News.</h2>
+  </div>
+  <p>&nbsp;</p>
+<div class="col-lg-12">
+  <div class="row equal">
+    <div class="col-xs-4 col-sm-4 col-md-4" *ngFor="let item of pagedItems" style="margin-block-end: 20px;">
+      <div class="image">
+        <div class="frontside">
+          <div class="card" style="min-height: 600px; max-height: 600px">
+            <div>
+              <div class="card-body text-center">
+                <p><img class="img-fluid" [src]="bindImage(item.urlToImage)" alt="card image"></p>
+                <a href="{{item.url}}" target="blank">
+                  <h4 class="card-title" style="color: black; text-align: left">{{item.title}}</h4>
+                </a>
+                <p class="card-text" style="text-align: left">{{item.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+<div class="row justify-content-center">
+  <ul *ngIf="pager.pages && pager.pages.length" class="pagination" style="margin-left: auto; margin-right:auto;">
+    <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+      <a (click)="setPage(1)" class="page-link">First</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item">
+      <a (click)="setPage(pager.currentPage - 1)" class="page-link">Previous</a>
+    </li>
+    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page-item">
+      <a (click)="setPage(page)" class="page-link">{{page}} </a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+      <a (click)="setPage(pager.currentPage + 1)" class="page-link">Next</a>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item">
+      <a (click)="setPage(pager.totalPages)" class="page-link">Last</a>
+    </li>
+  </ul>
+
+</div>
+
+<br />
+<br />

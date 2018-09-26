@@ -1,0 +1,16 @@
+.active {
+  background:#33cccc; color:#000;
+}
+#nav {
+  position: absolute;
+  left: 0px;
+  height: 40px;
+  background-color:white;
+  width: 100%;
+  text-align: center;
+}
+#nav ul {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
